@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="decode_project.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2188"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="sales_data" custom_title="0" dock_id="1" table="4,10:mainsales_data"/><dock_state state="000000ff00000000fd00000001000000020000000000000000fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000011300ffffff000000000000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">-- Query 1: Count Total Orders
+SELECT COUNT(*) AS Total_Orders
+FROM sales_data;</sql><sql name="SQL 2">-- Query 2: Most Expensive Products
+SELECT Product, UnitPrice
+FROM sales_data
+ORDER BY UnitPrice DESC
+LIMIT 10;</sql><sql name="SQL 3">-- Query 3: Average Price Per Product
+SELECT Product,
+AVG(UnitPrice) AS Average_Price
+FROM sales_data
+GROUP BY Product;</sql><sql name="SQL 4">-- Query 4: Total Quantity Sold
+SELECT Product,
+SUM(Quantity) AS Total_Quantity
+FROM sales_data
+GROUP BY Product
+ORDER BY Total_Quantity DESC;</sql><sql name="SQL 5">-- Query 5: Orders Per Product
+SELECT Product,
+COUNT(*) AS Number_Of_Orders
+FROM sales_data
+GROUP BY Product
+ORDER BY Number_Of_Orders DESC;</sql><sql name="SQL 6">-- Query 6: Orders with Quantity Greater Than 3
+SELECT *
+FROM sales_data
+WHERE Quantity &gt; 3;</sql><sql name="SQL 7">-- Query 7: Overall Average Product Price
+SELECT AVG(UnitPrice) AS Overall_Average_Price
+FROM sales_data;</sql><sql name="SQL 8">-- Query 1: Count Total Orders
+SELECT COUNT(*) AS Total_Orders
+FROM sales_data;
+
+-- Query 2: Most Expensive Products
+SELECT Product, UnitPrice
+FROM sales_data
+ORDER BY UnitPrice DESC
+LIMIT 10;
+
+-- Query 3: Average Price Per Product
+SELECT Product,
+AVG(UnitPrice) AS Average_Price
+FROM sales_data
+GROUP BY Product;
+
+-- Query 4: Total Quantity Sold
+SELECT Product,
+SUM(Quantity) AS Total_Quantity
+FROM sales_data
+GROUP BY Product
+ORDER BY Total_Quantity DESC;
+
+-- Query 5: Orders Per Product
+SELECT Product,
+COUNT(*) AS Number_Of_Orders
+FROM sales_data
+GROUP BY Product
+ORDER BY Number_Of_Orders DESC;
+
+-- Query 6: Orders with Quantity Greater Than 3
+SELECT *
+FROM sales_data
+WHERE Quantity &gt; 3;
+
+-- Query 7: Overall Average Product Price
+SELECT AVG(UnitPrice) AS Overall_Average_Price
+FROM sales_data;</sql><current_tab id="7"/></tab_sql></sqlb_project>
